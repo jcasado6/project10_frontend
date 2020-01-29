@@ -5,7 +5,6 @@ class Wishlist extends Component {
     render () {
         return (
             <p>Hello</p>
-        // <li>{this.props.name}</li>
         )
     }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Wishlist from './Components/Wishlist.js'
 import Home from './Components/Home.js'
@@ -14,13 +14,13 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch("http://localhost:8000/wishlist/")
-      .then(res => res.json())
-      .then(res => {
-        console.log(res);
-      });
-  }
+  // componentDidMount() {
+  //   fetch("http://localhost:8000/wishlist/")
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       console.log(res);
+  //     });
+  // }
 
   render() {
     return (
