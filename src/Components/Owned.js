@@ -25,12 +25,11 @@ class Owned extends Component {
         this.state = {
             shoeData: []
         }
-        // this.shoeList = this.shoeList.bind('this')
     }
 
 
     componentDidMount() {
-        axios.get('http://localhost:8000/wishlist/')
+        axios.get('http://localhost:8000/owned/')
             .then(res => {
                 this.setState({ shoeData: res.data });
                 console.log(this.state)
@@ -40,18 +39,12 @@ class Owned extends Component {
             })
     }
 
-
-    // shoeList() {
-    //     return this.state.shoeData.map(function(shoe, i){
-    //         return <Owned shoe={shoe} key={i}/>
-    //     })
-    // }
     
     render() {
         let list = this.state.shoeData.map(shoe => {
             return <Shoe shoe={shoe} key={shoe.id}/>
         })
-        console.log("Hello from Owned Component")
+    
         return (
             <div>
                 <h3>Owned</h3>
@@ -64,6 +57,8 @@ class Owned extends Component {
                             <th>Retail Price</th>
                             <th>Release Date</th>
                             <th>Image</th>
+                            <th>Edit</th>
+
                         </tr>
                     </thead>
                     <tbody>
